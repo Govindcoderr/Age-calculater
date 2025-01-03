@@ -1,14 +1,13 @@
-function calculaterAge(){
+function calculateAge() {
     const birthday = document.getElementById('birthday').value;
 
-    if (!birthday){
-        document.getElementById('result').textContent="Please enter a valid birthdate!";
+    if (!birthday) {
+        document.getElementById('result').textContent = "Please enter a valid birthdate!";
         return;
     }
 
     const today = new Date();
-
-    const birthDate = new Date(birthdate);
+    const birthDate = new Date(birthday);  // Corrected to use 'birthday'
 
     let age = today.getFullYear() - birthDate.getFullYear();
     const monthDiff = today.getMonth() - birthDate.getMonth();
@@ -18,5 +17,6 @@ function calculaterAge(){
         age--;
     }
 
-        
+    // Display the calculated age
+    document.getElementById('result').textContent = "Your age is: " + age;
 }
